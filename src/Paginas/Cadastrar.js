@@ -31,6 +31,7 @@ export default function Cadastrar(){
                     <input type="text" name="conta" />
                 </fieldset>
             </form>
+            <a href="/" className="botao_voltar">VOLTAR</a>
         </div>
     )
 }
