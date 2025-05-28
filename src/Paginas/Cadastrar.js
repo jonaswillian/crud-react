@@ -1,5 +1,9 @@
+import {useState} from 'react';
 import '../Style.css';
 export default function Cadastrar(){
+
+    const [txtNome, exibirTexto] = useState('');
+    
     return (
         <div className="tela">
             <p className='titulo_pagina'>Página de Cadastro</p>
@@ -11,7 +15,8 @@ export default function Cadastrar(){
                 <fieldset>
                     <legend>Dados Pessoais</legend>
                     <label>Nome Completo:</label>
-                    <input type="text" name="nome" />
+                    <input type="text" 
+                    onChange={ (txtNome) => exibirTexto(txtNome.target.value) } value={txtNome} name="nome" />
 
                     <label>Data de Nascimento:</label>
                     <input type="date" name="datanasc" />
