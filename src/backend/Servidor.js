@@ -16,7 +16,7 @@ const conexao = banco.createConnection({
 });
 
 servidor.get("/",(requisicao, resposta)=>{
-    var sql = "select * from veiculo";
+    var sql = "select * from veiculos";
     conexao.query(sql, (erros, resultado)=>{
         if (erros)
             return resposta.json(erros)
