@@ -29,33 +29,14 @@ export default function Listar(){
                 dados.map((linha, id)=>(
                     <div className='cliente' key={id}>
                         <img src={icone} className='icone_cliente' />
-                        <p className='nome_cliente'>{linha.marca}</p>
-                        <p className='banco_cliente'>{linha.modelo}</p>
-                        <p className='conta_cliente'>{linha.placa}</p>
+                        <p className='nome_cliente'>{linha.nome}</p>
+                        <p className='banco_cliente'>{linha.banco}</p>
+                        <p className='conta_cliente'>{linha.conta}</p>
                     </div>
                 ))
+                
             }
 
-            <div className='cliente'>
-                <img src={icone} className='icone_cliente' />
-                <p className='nome_cliente'>Jão</p>
-                <p className='banco_cliente'>Banco do Brasil</p>
-                <p className='conta_cliente'>4455-5</p>
-            </div>
-
-            <div className='cliente'>
-                <img src={icone} className='icone_cliente' />
-                <p className='nome_cliente'>Jão</p>
-                <p className='banco_cliente'>Banco do Brasil</p>
-                <p className='conta_cliente'>4455-5</p>
-            </div>
-
-            <div className='cliente'>
-                <img src={icone} className='icone_cliente' />
-                <p className='nome_cliente'>Jão</p>
-                <p className='banco_cliente'>Banco do Brasil</p>
-                <p className='conta_cliente'>4455-5</p>
-            </div>
             <a href="/" className='botao_voltar'>VOLTAR</a>
         </div>
     )

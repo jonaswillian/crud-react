@@ -15,11 +15,11 @@ const conexao = banco.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "drivelog"
+    database: "crud_react"
 });
 
 servidor.get("/read",(requisicao, resposta)=>{
-    var sql = "select * from veiculos";
+    var sql = "select * from clientes";
     conexao.query(sql, (erros, resultado)=>{
         if (erros)
             return resposta.json(erros)
@@ -27,4 +27,23 @@ servidor.get("/read",(requisicao, resposta)=>{
             return resposta.json(resultado);
     })
 });
+
+
+servidor.post("/create", (req, res)=>{
+    const sql = "INSERT INTO clientes (nome, datanasc, banco, conta) VALUES (?)";
+
+    const valores = [
+        req.body.txtNome,
+        req.body.txtDataNasc,
+        req.body.txtBanco,
+        req.body.txtConta
+    ]
+
+    conexao.query(sql,[valores], (erros, resultado)=>{
+        if (erros)
+            return ("Deu pau").json
+        else
+            return ("Sucesso").json;
+    })
+})
 
